@@ -53,7 +53,7 @@ export class LocustMasterService extends Construct {
       command,
       logging: ecs.LogDriver.awsLogs({
         streamPrefix: 'locust-master',
-        logRetention: RetentionDays.SIX_MONTHS,
+        logRetention: RetentionDays.FIVE_DAYS,
       }),
       portMappings: [
         {

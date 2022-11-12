@@ -28,7 +28,7 @@ export class LocustWorkerService extends Construct {
         command: ['--worker', '--master-host', props.locustMasterHostName],
         logging: ecs.LogDriver.awsLogs({
           streamPrefix: 'locust-worker',
-          logRetention: RetentionDays.SIX_MONTHS,
+          logRetention: RetentionDays.FIVE_DAYS,
         }),
         environment: {},
       })
@@ -46,11 +46,11 @@ export class LocustWorkerService extends Construct {
       capacityProviderStrategies: [
         {
           capacityProvider: 'FARGATE_SPOT',
-          weight: 1,
+          weight: 0,
         },
         {
           capacityProvider: 'FARGATE',
-          weight: 0,
+          weight: 1,
         },
       ],
       minHealthyPercent: 0,

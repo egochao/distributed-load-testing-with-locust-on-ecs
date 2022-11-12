@@ -1,3 +1,5 @@
+yarn.lock
+dummy*
 *.js
 !jest.config.js
 *.d.ts
