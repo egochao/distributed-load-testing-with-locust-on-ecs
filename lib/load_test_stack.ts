@@ -43,7 +43,7 @@ export class LoadTestStack extends Stack {
       containerInsights: true,
     });
 
-    const locustImage = new AssetImage('app');
+    const locustImage = new AssetImage('app/whisper');
 
     const master = new LocustMasterService(this, 'Master', {
       image: locustImage,
